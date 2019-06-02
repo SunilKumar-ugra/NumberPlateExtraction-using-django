@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+        <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.3/css/mdb.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+        .jumbotron {
+            width: 1000px;
+            height: 450px;
+            margin-left: 12%;
+            margin-top: 5%;
+        }
+            #r1,#r2,#r3,#r4,#r5,#r6,#r7,#r8{
+                font-weight: bold;
+                font-size: 14px;
+            }
+            body{
+                background-color: black;
+            }
+    </style>
+
+</head>
+<body>
+  <div class="jumbotron">
+        <div class="row">
+            <div class="col">
+            </div>
+            <div class="col">
+                <h4 style="text-align:center;margin-left: -120%;color: blue"><b>NumberPlate Recognization And Extraction Information</b></h4><br><br>
+            </div>
+        </div><br>
+        <div class="form-row">
+            <p style="display: none;" id="result">{{ r }}</p>
+            <form method="POST" action="send/">
+{#                <h1 style="color: blue;">Plate Number : {{r}}</h1>#}
+                <table class="table">
+                  <thead class="black white-text">
+                    <tr style="text-align: center;">
+                      <th scope="col">Registration Number</th>
+                      <th scope="col">Owner Name</th>
+                      <th scope="col">Model</th>
+                      <th scope="col">Fitness Upto</th>
+                        <th scope="col">Insurance Date</th>
+                      <th scope="col">Fuel Type</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Phone</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td id="r1"></td>
+                      <td id="r2"></td>
+                      <td id="r3"></td>
+                        <td id="r4"></td>
+                      <td id="r5"></td>
+                      <td id="r6"></td>
+                        <td id="r7"></td>
+                      <td id="r8"></td>
+                    </tr>
+                  </tbody>
+                </table>
+
+                <button style="margin-left: 40%;margin-top: 4%; " type="submit" class="btn btn-primary">Send mail <i class="fa fa-paper-plane"></i> </button>
+            </form>
+        </div>
+    </div>
+<script>
+    var res = document.getElementById('result').innerHTML;
+    console.log("Result= "+res);
+    res = res.split("(");
+    console.log(res);
+
+    res = res[1];
+    console.log(res);
+
+    res = res.split(")");
+    console.log(res[0]);
+
+    res = res[0];
+
+    res = res.split(",");
+    console.log(res);
+
+    res0 = res[0].split("'");
+    console.log(res0[1]);
+    res0 = res0[1];
+
+    res1 = res[1].split("'");
+    console.log(res1[1]);
+    res1 = res1[1];
+
+    res2 = res[2].split("'");
+    console.log(res2[1]);
+    res2 = res2[1];
+
+    res3 = res[3].split("'");
+    console.log(res3[1]);
+    res3 = res3[1];
+
+    res4 = res[4].split("'");
+    console.log(res4[1]);
+    res4 = res4[1];
+
+    res5 = res[5].split("'");
+    console.log(res5[1]);
+    res5 = res5[1];
+
+    res6 = res[6].split("'");
+    console.log(res6[1]);
+    res6 = res6[1];
+
+    res7 = res[7].split("'");
+    console.log(res7[1]);
+    res7 = res7[1];
+
+    document.getElementById('r1').innerHTML = res0;
+    document.getElementById('r2').innerHTML = res1;
+    document.getElementById('r3').innerHTML = res2;
+    document.getElementById('r4').innerHTML = res3;
+    document.getElementById('r5').innerHTML = res4;
+    document.getElementById('r6').innerHTML = res5;
+    document.getElementById('r7').innerHTML = res6;
+    document.getElementById('r8').innerHTML = res7;
+
+</script>
+</body>
+</html>
