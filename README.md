@@ -1,4 +1,4 @@
-Pycharm Professional# NumberPlateExtraction-using Django And sending Email
+# NumberPlateExtraction-using Django And sending Email
 
 > Assume that any vehicle violated the traffic rules. It is difficult for the policeMen to sit and watch all the vehicles on the road to complain
 This project will help the policemen complain about those who violated the traffic rules
